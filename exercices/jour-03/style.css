@@ -1,0 +1,47 @@
+h1 {
+    margin-left: 6%;
+}
+
+h2 {
+    margin-left: 6%;
+}
+
+.nb-produit-affiche {
+    margin-left: 6%;
+}
+
+.fiche-produit-flex {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.fiche-produit {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    margin: 30px;
+    background-color: #E8E5DF;
+    border-radius: 10px;
+    text-align: center;
+}
+
+img {
+    border-radius: 10px;
+}
+
+
+
+.available {
+    color: green;
+}
+
+.not-available {
+    color: red;
+}
+
+.price,
+.stock {
+    margin: 7px;
+}

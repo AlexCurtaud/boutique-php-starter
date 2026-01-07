@@ -31,6 +31,15 @@ $product = [
         "stock" => 9,
     ]
 ];
+
+function usortTest($a, $b)
+{
+    return $a["price"] < $b["price"];
+}
+
+usort($product, "usortTest");
+var_dump($product);
+
 ?>
 
 <!DOCTYPE html>

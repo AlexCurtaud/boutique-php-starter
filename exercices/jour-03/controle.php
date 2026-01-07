@@ -9,7 +9,7 @@ $product = [
     [
         "name" => "Ski 1500",
         "price" => 99.99,
-        "stock" => 2,
+        "stock" => 0,
     ],
     [
         "name" => "Ski 2000",
@@ -43,7 +43,7 @@ $product = [
     ],
     [
         "name" => "Snowboard 4000",
-        "price" => 799.99,
+        "price" => 99.99,
         "stock" => 4,
     ],
     [
@@ -67,9 +67,21 @@ $product = [
 
 // Cette boucle permet de n'afficher uniquement les produits dont le stock est supérieur à 0 et dont le prix est inférieur à 100€
 foreach ($product as $product) {
-    if ($product["stock"] > 0 && $product["price"] < 100) {
-        echo $product["name"] . '<br>' .
-            $product["price"] . '€<br>' .
-            $product["stock"] . '<br>';
+    if ($product["stock"] === 0) {
+        continue;
+    } else if ($product["price"] > 100) {
+        continue;
     }
+    echo $product["name"] . '<br>' .
+        $product["price"] . '€<br>' .
+        $product["stock"] . '<br>';
 }
+
+// // La même boucle que celle d'avant mais dans une autre méthode
+// foreach ($product as $product) {
+//     if ($product["stock"] > 0 && $product["price"] < 100) {
+//         echo $product["name"] . '<br>' .
+//             $product["price"] . '€<br>' .
+//             $product["stock"] . '<br>';
+//     }
+// }

@@ -1,0 +1,128 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, rgb(233, 255, 254), rgb(219, 228, 247));
+}
+
+h1 {
+    text-align: center;
+    font-size: 25px;
+    background-color: yellow;
+}
+
+h2 {
+    margin-left: 12%;
+    font-size: 18px;
+}
+
+.nb-produit-stock,
+.nb-produit-affiche {
+    margin-left: 11%;
+    font-size: 12px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+
+/* Le style du catalogue dans sa globalité */
+.catalog-flex {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 5%;
+    margin-top: 0%;
+}
+
+/* Le style carte produits */
+.product-card {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    height: 420px;
+    margin: 2%;
+    background-color: #E8E5DF;
+    text-align: center;
+    position: relative;
+    box-shadow: 1px 1px 3px 1px rgb(129, 124, 98);
+}
+
+.product-card-not-available {
+    opacity: 75%;
+}
+
+/* Images du catalogue */
+.img-plus-badge {
+    position: relative;
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/* Le style des badges est regroupés ci-dessous */
+.badge {
+    position: absolute;
+    left: 3%;
+    margin: 0;
+    font-weight: 600;
+    font-size: 10px;
+}
+
+.badgeNew {
+    top: 2%;
+    color: blueviolet;
+}
+
+.badgeDerniers {
+    top: 7%;
+    color: blueviolet;
+}
+
+.badgeRupture {
+    top: 2%;
+    color: red;
+}
+
+.badgePromo {
+    top: 2%;
+    color: brown;
+}
+
+/* Le style du texte sur la carte produit est regroupé ci-dessous */
+.product-name {
+    margin: 0px;
+    position: absolute;
+    bottom: 25%;
+    left: 50%;
+    translate: -50% 0%;
+    white-space: nowrap;
+}
+
+.price {
+    margin: 0px;
+}
+
+/* Les boutons ajout au panier */
+.button-basket {
+    width: 100px;
+    height: 30px;
+    position: absolute;
+    margin-bottom: 10px;
+    left: 50%;
+    bottom: 0%;
+    translate: -50% 0%;
+    background-color: goldenrod;
+    border: 0px;
+    border-radius: 2px;
+}
+
+.button-not-available {
+    background-color: grey;
+}
+
+.button-available {
+    background-color: goldenrod;
+    ;
+}

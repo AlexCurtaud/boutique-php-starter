@@ -20,39 +20,40 @@ $canOrder = ($stock > $quantity) ? "true" : "false";
 // Fonction fléchées avec l'opérateur ternaire
 $isStock = fn($stock) => $stock > 0 ? "en stock" : "pas dispo";
 $isSale = fn($discount) => $discount > 0 ? "en promo" : "pas de promo";
+echo $isSale($discount);
 $new = fn($dateSinced) => $dateSinced < 30 ? "nouveau produit" : "ancienne collection";
 $order = fn($stock, $quantity) => $stock > $quantity ? "Vous pouvez commander" : "Pas assez de stock disponible";
 // Fonctions classiques
 function isInStock($stock)
 {
-    if ($stock > 0)
+    if ($stock > 0) {
         return "<br>true";
-    else
-        return "<br>false";
+    }
+    return "<br>false";
 }
 
 function isOnSale($discount)
 {
-    if ($discount > 0)
+    if ($discount > 0) {
         return "<br>true";
-    else
-        return "<br>false";
+    }
+    return "<br>false";
 }
 
 function isNew($dateSinced)
 {
-    if ($dateSinced < 30)
+    if ($dateSinced < 30) {
         return "<br>true";
-    else
-        return "<br>false";
+    }
+    return "<br>false";
 }
 
 function canOrder($stock, $quantity)
 {
-    if ($stock > $quantity)
+    if ($stock > $quantity) {
         return "<br>true";
-    else
-        return "<br>false";
+    }
+    return "<br>false";
 }
 
 // echo des variables où on a utilisé l'opérateur ternaire. Beaucoup moins de lignes pour une simple expression qu'avec une fonction classique
@@ -63,10 +64,10 @@ echo '<br>' . $canOrder;
 
 // Appel des fonctions fléchées utilisant l'opérateur ternaire
 // Ils ne fonctionnent pas et je ne sais pas pourquoi
-// echo $isStock($stock);
-// echo $inSale($discount);
-// echo $new($dateSinced);
-// echo $order($stock, $quantity);
+echo $isStock($stock);
+echo $isSale($discount);
+echo $new($dateSinced);
+echo $order($stock, $quantity);
 
 // Appel des fonctions classique avec un echo car dans les fonctions que j'ai faites, il y a uniquement un return
 echo isInStock($stock);

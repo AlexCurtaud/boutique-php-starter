@@ -83,12 +83,8 @@ function validateEmail(string $email): bool
 
 function validatePrice(mixed $price): bool
 {
-    if ($price > 0) {
-        return true;
-    } else {
-        return false;
+        return $price > 0;
     }
-}
 
 function dump_and_die(mixed ...$vars): void
 {

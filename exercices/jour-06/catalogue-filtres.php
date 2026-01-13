@@ -8,22 +8,6 @@ $maxPrice = $_GET["max-price"] ?? 1000;
 $category = $_GET["category"] ?? "";
 $stock = $_GET["stock"] ?? "";
 
-var_dump($minPrice, $maxPrice);
-echo '<br>';
-echo '<br>';
-
-var_dump(filtreNom($productName, $product));
-echo '<br>';
-echo '<br>';
-var_dump(filtrePrix($minPrice, $maxPrice, $product));
-echo '<br>';
-echo '<br>';
-var_dump(filtreCategory($category, $product));
-echo '<br>';
-echo '<br>';
-var_dump(inStock($stock, $product));
-// var_dump(filtreNom($productName, $product), filtrePrix($minprice, $maxprice, $product));
-// var_dump(filterOn($product, $productName, $minPrice, $maxPrice, $category, $stock));
 ?>
 
 <!DOCTYPE html>
@@ -49,9 +33,9 @@ var_dump(inStock($stock, $product));
             <li><label for="category-select">Category</label>
                 <select name="category" id="category-select">
                     <option value="">Select Category</option>
-                    <option value="Men">Men</option>
-                    <option value="Women">Women</option>
-                    <option value="Kids">Kids</option>
+                    <option value="Men" <?= $category === "Men" ? "selected" : NULL ?>>Men</option>
+                    <option value="Women" <?= $category === "Women" ? "selected" : NULL ?>>Women</option>
+                    <option value="Kids" <?= $category === "Kids" ? "selected" : NULL ?>>Kids</option>
                 </select>
             </li>
             <li><label for="en-stock">Available in stock</label>

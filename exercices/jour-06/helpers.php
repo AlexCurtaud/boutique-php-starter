@@ -75,68 +75,13 @@ function filtreProduit($str, $arr)
     }
 }
 
-//////////////////////
-function filtreNom($str, $arr)
-{
-    $filterByName = [];
-    foreach ($arr as $vararr) {
-        if (stripos($vararr["name"], $str) !== false || empty($str)) {
-            array_push($filterByName, true);
-        } else {
-            array_push($filterByName, false);
-        }
-    }
-    return $filterByName;
-}
-
-function filtrePrix($minprice, $maxprice, $arr)
-{
-    $filterbyPrice = [];
-    foreach ($arr as $vararr) {
-        if ($vararr["price"] >= $minprice && $vararr["price"] <= $maxprice) {
-            array_push($filterbyPrice, true);
-        } else {
-            array_push($filterbyPrice, false);
-        }
-    }
-    return $filterbyPrice;
-}
-
-function filtreCategory($category, $arr)
-{
-    $filterByCategory = [];
-    foreach ($arr as $vararr) {
-        if ($category === $vararr["category"] || empty($category)) {
-            array_push($filterByCategory, true);
-        } else {
-            array_push($filterByCategory, true);
-        }
-    }
-    return $filterByCategory;
-}
-
-function inStock($stock, $arr)
-{
-    $filterByStock = [];
-    foreach ($arr as $vararr) {
-        if ($stock > 0 || empty($stock)) {
-            array_push($filterByStock, true);
-        } else {
-            array_push($filterByStock, false);
-        }
-    }
-    return $filterByStock;
-}
-////////////////////////////
-/// Fonction filtre global
 function filterOn($arr, $productName, $minPrice, $maxPrice, $category, $stock)
 {
-    $filtreAllProducts = [];
     foreach ($arr as $vararr) {
-        if (filtreNom($productName, $arr)) {
-            if (filtrePrix($minPrice, $maxPrice, $arr)) {
-                if (filtreCategory($category, $arr)) {
-                    if (inStock($stock, $arr)) {
+        if ((stripos($vararr["name"], $productName) !== false || empty($productName)) === true) {
+            if ((($vararr["price"] >= $minPrice || empty($minPrice)) && ($vararr["price"] <= $maxPrice || empty($maxPrice))) === true) {
+                if (($category === $vararr["category"] || empty($category)) === true) {
+                    if (($stock > 0 || empty($stock)) === true) {
                         echo '<p>' . $vararr["name"] . '</p>';
                     }
                 }

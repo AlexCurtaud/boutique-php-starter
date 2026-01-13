@@ -62,3 +62,11 @@ function passwordChar($password)
         return "<span>*Minimum 8 characters for a password</span>";
     }
 }
+
+function filtreProduit($str, $arr)
+{
+    foreach ($arr as $vararr) {
+        if (stripos($vararr["name"], $str) !== false)
+            echo '<p>' . $vararr["name"] . '</p>';
+    }
+}

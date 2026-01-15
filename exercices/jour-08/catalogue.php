@@ -21,13 +21,11 @@ $array = [
 ];
 
 foreach ($array as $products) {
+    $totalStock += $products->stock;
+    $totalAmount += $products->stock * $products->prix;
     echo $products->id, $products->nom, $products->description, $products->prix, $products->stock, $products->category . '<br>';
 }
 
-
-foreach ($array as $products) {
-    echo $products->prix * $products->stock. '<br>';
-}
-
-
-
+echo $totalStock;
+echo '<br>';
+echo $totalAmount;

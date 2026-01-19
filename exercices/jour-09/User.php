@@ -23,14 +23,15 @@ class User
 
     public function getAddresses()
     {
+        $allAdresses = [];
         foreach ($this->addresses as $address) {
-            echo $address->display() . '<br>';
+            array_push($allAdresses, $address->display());
         }
-        var_dump(count($this->addresses));
+        return $allAdresses;
     }
 
     public function getDefaultAddress()
     {
-        echo $this->addresses[0]->display();
+        return $this->addresses[0]->display();
     }
 }

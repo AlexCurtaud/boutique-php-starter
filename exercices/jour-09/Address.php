@@ -10,7 +10,7 @@ class Address
     ) {}
     public function display()
     {
-        echo $this->street . ' <br>' .
+        return $this->street . ' <br>' .
             $this->city . ' <br>' .
             $this->postCode . ' <br>' .
             $this->country . ' <br>';

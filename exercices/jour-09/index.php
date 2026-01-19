@@ -31,11 +31,15 @@ $cart->update($ski1, 6);
 $cart->update($ski1, 2);
 $cart->update($ski1, 1);
 
+//$cart2 = new Cart();
+//$cart2->addProduct($snowboard2, 3)->addProduct($ski3, 7)->update($snowboard2, -2);
+
 $bobby = new User("bobby", "bobby@gmail.com");
 $bobby->addAddress("Grove Street 1", "LA", 15542, "USA");
 $bobby->addAddress("Grove Street 5", "LA", 15542, "USA");
 
-$bobby->getAddresses();
+
+var_dump($bobby->getAddresses());
 $bobby->getDefaultAddress();
 
 // echo $cart->getTotalCart();

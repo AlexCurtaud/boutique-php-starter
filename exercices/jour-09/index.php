@@ -5,6 +5,7 @@ require_once "Cart-item.php";
 require_once "Cart.php";
 require_once "User.php";
 require_once "Address.php";
+require_once "Order.php";
 
 $ski = new Category(1, "Ski", "Skis are two planks that get you down a mountain");
 $snowboard = new Category(2, "Snowboard", "Snowboard is one large planks that get you down the mountain");
@@ -37,8 +38,12 @@ $bobby->addAddress("Grove Street 5", "LA", 15542, "USA");
 $bobby->getAddresses();
 $bobby->getDefaultAddress();
 
-echo $cart->getTotalCart();
-echo '<br>';
-echo $cart->differentItem();
-echo '<br>';
-echo $cart->count();
+// echo $cart->getTotalCart();
+// echo '<br>';
+// echo $cart->differentItem();
+// echo '<br>';
+// echo $cart->count();
+
+$order1 = new Order(1, $bobby, $cart);
+echo $order1->getTotal();
+echo $order1->getItemCount();

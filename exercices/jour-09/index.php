@@ -3,6 +3,8 @@ require_once "Product.php";
 require_once "Category.php";
 require_once "Cart-item.php";
 require_once "Cart.php";
+require_once "User.php";
+require_once "Address.php";
 
 $ski = new Category(1, "Ski", "Skis are two planks that get you down a mountain");
 $snowboard = new Category(2, "Snowboard", "Snowboard is one large planks that get you down the mountain");
@@ -25,7 +27,15 @@ $cart->addProduct($ski1);
 $cart->addProduct($snowboard1);
 $cart->update($ski1, 1);
 $cart->update($ski1, 6);
-$cart->update($ski1, 8);
+$cart->update($ski1, 2);
+$cart->update($ski1, 1);
+
+$bobby = new User("bobby", "bobby@gmail.com");
+$bobby->addAddress("Grove Street 1", "LA", 15542, "USA");
+$bobby->addAddress("Grove Street 5", "LA", 15542, "USA");
+
+$bobby->getAddresses();
+$bobby->getDefaultAddress();
 
 echo $cart->getTotalCart();
 echo '<br>';

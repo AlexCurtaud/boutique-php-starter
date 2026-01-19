@@ -14,7 +14,7 @@ class CartItem
 
     public function add(int $units)
     {
-        if ($this->quantity < $this->product->getStock()) {
+        if ($units < $this->product->getStock() - $this->quantity) {
             return $this->quantity += max(1, $units);
         }
         echo "Not enough quantity in stock";

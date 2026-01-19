@@ -5,6 +5,13 @@ class productRepository
 
 
     ///////////////////// GETTER ////////////////////////////
+    public function read()
+    {
+        foreach ($this->findAll() as $lines) {
+            echo $lines['name'] . ' ' . $lines["price"] . ' ' . $lines["stock"] . '<br>';
+        }
+    }
+
     public function find(int $id): array
     {
         $findById = $this->pdo->prepare("SELECT * FROM products WHERE id=?");
@@ -29,7 +36,23 @@ class productRepository
         $findByCat->execute([$id]);
     }
 
-    public function findInStock() {}
+    public function findInStock()
+    {
+        foreach ($this->findAll() as $lines) {
+            if ($lines['stock'] > 0) {
+                echo $lines['name'] . ' ' . $lines["price"] . ' ' . $lines["stock"] . '<br>';
+            }
+        }
+    }
+
+    public function getByPriceRange(int $min = 0, int $max)
+    {
+        foreach ($this->findAll() as $lines) {
+            if ($lines['price'] >= $min && $lines['price'] < $max) {
+                echo $lines['name'] . ' ' . $lines["price"] . ' ' . $lines["stock"] . '<br>';
+            }
+        }
+    }
 
     ////////////////////// SETTER ///////////////////////////////
     public function save(Product $product)

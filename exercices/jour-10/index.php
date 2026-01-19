@@ -36,4 +36,4 @@ $snowboard2 = new Product(5, "Snowboard 2500", "Good snowboard", 349.99, 11, $sn
 $ski1->priceChange(299.99);
 echo $ski1->getPrice();
 //$repo->update($ski2);
-$repo->delete($ski2);
+$repo->getByPriceRange(30, 60);

@@ -23,6 +23,14 @@ class productRepository
         return $finderAll;
     }
 
+    public function findByCategory(int $id)
+    {
+        $findByCat = $this->pdo->prepare("SELECT * FROM products WHERE category_id = ?");
+        $findByCat->execute([$id]);
+    }
+
+    public function findInStock() {}
+
     ////////////////////// SETTER ///////////////////////////////
     public function save(Product $product)
     {

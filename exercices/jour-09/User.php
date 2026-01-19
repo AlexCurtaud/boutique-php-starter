@@ -13,11 +13,7 @@ class User
     // Création d'addresses, et insertion de ces adresses dans le tableau d'adresse
     public function addAddress($street, $city, $postCode, $country)
     {
-        if (empty($this->addresses)) {
-            $this->addresses[0] = new Address($street, $city, $postCode, $country);
-        } else {
-            $this->addresses[count($this->addresses)] = new Address($street, $city, $postCode, $country);
-        }
+        $this->addresses[] = new Address($street, $city, $postCode, $country);
         echo "address added <br>";
     }
 

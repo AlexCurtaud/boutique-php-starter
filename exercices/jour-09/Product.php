@@ -10,6 +10,8 @@ class Product
         private int $stock,
         private Category $category
     ) {}
+
+    ///////////////    GETTER     //////////////////////
     // Retourne le nom et la catégorie du produit
     public function display(): string
     {
@@ -30,6 +32,13 @@ class Product
     {
         return $this->id;
     }
+    // Retourne le nom
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    //////////////////////    SETTER    /////////////////////////
     public function increaseStock($units): int
     {
         return $this->stock + $units;
@@ -37,5 +46,17 @@ class Product
     public function decreaseStock($units): int
     {
         return $this->stock - $units;
+    }
+    public function nameChange($string)
+    {
+        $this->name = $string;
+    }
+    public function priceChange($float)
+    {
+        $this->price = $float;
+    }
+    public function stockChange($int)
+    {
+        $this->stock = $int;
     }
 }

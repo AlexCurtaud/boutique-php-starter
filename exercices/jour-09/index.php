@@ -6,6 +6,7 @@ require_once "Cart.php";
 require_once "User.php";
 require_once "Address.php";
 require_once "Order.php";
+require_once "../jour-10/ProductRepository.php";
 
 $ski = new Category(1, "Ski", "Skis are two planks that get you down a mountain");
 $snowboard = new Category(2, "Snowboard", "Snowboard is one large planks that get you down the mountain");

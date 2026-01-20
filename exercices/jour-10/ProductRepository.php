@@ -12,22 +12,22 @@ class ProductRepository
         }
     }
 
-    public function find(int $id): array
+    public function find(int $id): ?Product
     {
         $findById = $this->pdo->prepare("SELECT * FROM products WHERE id=?");
         $findById->execute([$id]);
-        $finder = $findById->fetch();
+        $data = $findById->fetch();
 
-        return $finder;
+        return $data ? $this->hydrate($data) : null;
     }
 
     public function findAll(): array
     {
         $findAll = $this->pdo->prepare("SELECT * FROM products");
         $findAll->execute();
-        $finderAll = $findAll->fetchAll(PDO::FETCH_ASSOC);
+        $data = $findAll->fetchAll(PDO::FETCH_ASSOC);
 
-        return $finderAll;
+        return array_map($this, hydrate(), $data)
     }
 
     public function findByCategory(int $id)
@@ -65,7 +65,7 @@ class ProductRepository
     ////////////////////// SETTER ///////////////////////////////
     public function save(Product $product)
     {
-        $create = $this->pdo->prepare("INSERT INTO products (name, price, stock) VALUE (?, ?, ?)");
+        $create = $this->pdo->prepare("INSERT INTO products (name, price, description, stock) VALUE (?, ?, ?)");
         $create->execute([$product->getName(), $product->getPrice(), $product->getStock()]);
         echo "product added";
     }
@@ -82,5 +82,25 @@ class ProductRepository
         $delete = $this->pdo->prepare("DELETE FROM products WHERE id=?");
         $delete->execute([$product->getId()]);
         echo "product deleted";
+    }
+
+    // Hydratation : tableau → objet
+    private function hydrate(array $data): Product
+    {
+        if (!empty($data['category_id'])) {
+            $catFinder = $this->pdo->prepare("SELECT id, nom FROM categories WHERE id=?");
+            $catFinder->execute([$data['category_id']]);
+            $finder = $catFinder->fetch();
+            $category = new Category($finder['id'], $finder['nom']);
+        }
+
+        return new Product(
+            (int) $data['id'],
+            $data['name'],
+            $data['description'],
+            (float) $data['price'],
+            (int) $data['stock'],
+            $category
+        );
     }
 }

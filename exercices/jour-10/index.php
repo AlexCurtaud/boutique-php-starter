@@ -7,6 +7,7 @@ require_once "../jour-09/User.php";
 require_once "../jour-09/Address.php";
 require_once "../jour-09/Order.php";
 require_once "ProductRepository.php";
+require_once "CategoryRepository.php";
 
 try {
     $pdo = new PDO(
@@ -34,6 +35,12 @@ $snowboard2 = new Product(5, "Snowboard 2500", "Good snowboard", 349.99, 11, $sn
 
 //$repo->save($ski1);
 $ski1->priceChange(299.99);
-echo $ski1->getPrice();
+//echo $ski1->getPrice();
 //$repo->update($ski2);
-$repo->getByPriceRange(30, 60);
+//$repo->getByPriceRange(30, 60);
+//var_dump($repo->search("anc"));
+
+$cat = new CategoryRepository($pdo);
+
+//var_dump($cat->findAll());
+var_dump($cat->findWithProduct($ski));

@@ -6,8 +6,21 @@ class Category
         private string $name,
         private string $description
     ) {}
+
+    ///////////////////// GETTER ////////////////////////////
     public function categoryDisplay()
     {
         return $this->name;
+    }
+
+    ///////////////////// SETTER ////////////////////////////
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    public function getId()
+    {
+        return $this->id;
     }
 }

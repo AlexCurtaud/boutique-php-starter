@@ -1,5 +1,5 @@
 <?php
-class productRepository
+class ProductRepository
 {
     public function __construct(private PDO $pdo) {}
 
@@ -52,6 +52,14 @@ class productRepository
                 echo $lines['name'] . ' ' . $lines["price"] . ' ' . $lines["stock"] . '<br>';
             }
         }
+    }
+
+    public function search($search)
+    {
+        $searching = $this->pdo->prepare("SELECT * FROM products WHERE name LIKE ?");
+        $searching->execute(['%' . $search . '%']);
+        $searched = $searching->fetchAll(PDO::FETCH_ASSOC);
+        return $searched;
     }
 
     ////////////////////// SETTER ///////////////////////////////

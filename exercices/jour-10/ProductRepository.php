@@ -4,14 +4,7 @@ class ProductRepository
     public function __construct(private PDO $pdo) {}
 
 
-    ///////////////////// GETTER ////////////////////////////
-    public function read()
-    {
-        foreach ($this->findAll() as $lines) {
-            echo $lines['name'] . ' ' . $lines["price"] . ' ' . $lines["stock"] . '<br>';
-        }
-    }
-
+    ///////////////////// READ ////////////////////////////
     public function find(int $id): ?Product
     {
         $findById = $this->pdo->prepare("SELECT * FROM products WHERE id=?");
@@ -25,11 +18,11 @@ class ProductRepository
     {
         $findAll = $this->pdo->prepare("SELECT * FROM products");
         $findAll->execute();
-        $data = $findAll->fetchAll(PDO::FETCH_ASSOC);
 
-        return array_map($this, hydrate(), $data)
+        return array_map([$this, 'hydrate'], $findAll->fetchAll());
     }
 
+    ///////////////////// GETTER ////////////////////////////
     public function findByCategory(int $id)
     {
         $findByCat = $this->pdo->prepare("SELECT * FROM products WHERE category_id = ?");

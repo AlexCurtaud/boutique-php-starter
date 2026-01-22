@@ -17,13 +17,14 @@ class CartItem
         if ($units < $this->product->getStock() - $this->quantity) {
             return $this->quantity += max(1, $units);
         }
-        echo "Not enough quantity in stock";
+        echo 'Not enough quantity in stock';
     }
 
     public function remove(int $units)
     {
         return $this->quantity -= $units;
     }
+
     public function getQuantity()
     {
         return $this->quantity;

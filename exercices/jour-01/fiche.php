@@ -1,14 +1,15 @@
 <?php
-$name = "Raquette";
+$name = 'Raquette';
 $price = 199.99;
 $stock = 3;
 
 function enStock($stock)
 {
-    if ($stock > 0)
-        echo "En stock";
-    else
-        echo "Rupture de stock";
+    if ($stock > 0) {
+        echo 'En stock';
+    } else {
+        echo 'Rupture de stock';
+    }
 }
 ?>
 

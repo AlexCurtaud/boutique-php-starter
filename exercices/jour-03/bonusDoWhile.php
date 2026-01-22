@@ -1,5 +1,5 @@
 <?php
-$codeUsed;
+
 $i = 20;
 
 for ($a = 0; $a < 20; $a++) {
@@ -14,5 +14,5 @@ var_dump($codeUsed);
 
 // do {
 
-//     $usingCode = 
+//     $usingCode =
 // }

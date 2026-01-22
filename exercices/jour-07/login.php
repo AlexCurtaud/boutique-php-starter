@@ -1,12 +1,12 @@
 <?php
 session_start();
 
-if (($_POST["username"] === "admin" && $_POST["password"] === "1234")) {
-    $_SESSION["user"] = "admin";
-    header("Location: dashboard.php");
-} else if (empty($_POST["username"]) && empty($_POST["password"])) {
+if (($_POST['username'] === 'admin' && $_POST['password'] === '1234')) {
+    $_SESSION['user'] = 'admin';
+    header('Location: dashboard.php');
+} elseif (empty($_POST['username']) && empty($_POST['password'])) {
 } else {
-    echo "Identifiants incorrectes";
+    echo 'Identifiants incorrectes';
 }
 
 ?>

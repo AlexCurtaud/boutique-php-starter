@@ -9,6 +9,7 @@ class Bank
     public function deposit($amount)
     {
         $this->balance = $this->balance + $amount;
+
         return $this->balance;
     }
 
@@ -16,9 +17,10 @@ class Bank
     {
         if ($amount < $this->balance) {
             $this->balance = $this->balance - $amount;
+
             return $this->balance;
         }
-        echo "Not enough fund";
+        echo 'Not enough fund';
     }
 
     public function balance()

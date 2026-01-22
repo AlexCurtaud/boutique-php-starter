@@ -1,12 +1,12 @@
 <?php
-require_once "data.php";
-require_once "helpers.php";
+require_once 'data.php';
+require_once 'helpers.php';
 
-$productName = $_GET["product_name"] ?? "";
-$minPrice = $_GET["min-price"] ?? 0;
-$maxPrice = $_GET["max-price"] ?? 1000;
-$category = $_GET["category"] ?? "";
-$stock = $_GET["stock"] ?? "";
+$productName = $_GET['product_name'] ?? '';
+$minPrice = $_GET['min-price'] ?? 0;
+$maxPrice = $_GET['max-price'] ?? 1000;
+$category = $_GET['category'] ?? '';
+$stock = $_GET['stock'] ?? '';
 
 ?>
 
@@ -33,13 +33,13 @@ $stock = $_GET["stock"] ?? "";
             <li><label for="category-select">Category</label>
                 <select name="category" id="category-select">
                     <option value="">Select Category</option>
-                    <option value="Men" <?= $category === "Men" ? "selected" : NULL ?>>Men</option>
-                    <option value="Women" <?= $category === "Women" ? "selected" : NULL ?>>Women</option>
-                    <option value="Kids" <?= $category === "Kids" ? "selected" : NULL ?>>Kids</option>
+                    <option value="Men" <?= $category === 'Men' ? 'selected' : null ?>>Men</option>
+                    <option value="Women" <?= $category === 'Women' ? 'selected' : null ?>>Women</option>
+                    <option value="Kids" <?= $category === 'Kids' ? 'selected' : null ?>>Kids</option>
                 </select>
             </li>
             <li><label for="en-stock">Available in stock</label>
-                <input type="checkbox" id="en-stock" name="stock" value="true" <?= $stock === "true" ? "checked" : NULL ?>>
+                <input type="checkbox" id="en-stock" name="stock" value="true" <?= $stock === 'true' ? 'checked' : null ?>>
             </li>
             <div class="button">
                 <button type="submit">Filter</button>

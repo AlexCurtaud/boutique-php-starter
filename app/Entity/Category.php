@@ -1,4 +1,5 @@
 <?php
+
 class Category
 {
     public function __construct(
@@ -6,13 +7,13 @@ class Category
         private string $name,
     ) {}
 
-    ///////////////////// GETTER ////////////////////////////
+    // /////////////////// GETTER ////////////////////////////
     public function categoryDisplay()
     {
         return $this->name;
     }
 
-    ///////////////////// SETTER ////////////////////////////
+    // /////////////////// SETTER ////////////////////////////
     public function getName()
     {
         return $this->name;

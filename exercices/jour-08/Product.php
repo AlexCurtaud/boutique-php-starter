@@ -21,6 +21,7 @@ class Product
         if ($this->stock > 0) {
             return true;
         }
+
         return false;
     }
 
@@ -28,6 +29,7 @@ class Product
     {
         if ($qty <= $this->stock) {
             $this->stock -= $qty;
+
             return $this->stock;
         }
     }
@@ -38,7 +40,7 @@ class Product
     }
 }
 
-$boost = new Product(1, "boost", "boost is cool", 99.99, 20, "Booster");
+$boost = new Product(1, 'boost', 'boost is cool', 99.99, 20, 'Booster');
 
 echo $boost->getPriceIncludingTax();
 echo '<br>';

@@ -1,4 +1,5 @@
 <?php
+
 class Order
 {
     private string $status;
@@ -7,7 +8,7 @@ class Order
         private int $id,
         private User $user,
         private Cart $item,
-        private DateTime $date = new DateTime("now", new DateTimeZone("Europe/Paris"))
+        private DateTime $date = new DateTime('now', new DateTimeZone('Europe/Paris'))
     ) {}
 
     // GETTER

@@ -1,7 +1,8 @@
 <?php
+
 function greeting()
 {
-    echo "Hello!";
+    echo 'Hello!';
 }
 
 function greetingName($name)
@@ -10,6 +11,6 @@ function greetingName($name)
 }
 
 greeting();
-greetingName("Bob");
-greetingName("Eva");
-greetingName("Ivar");
+greetingName('Bob');
+greetingName('Eva');
+greetingName('Ivar');

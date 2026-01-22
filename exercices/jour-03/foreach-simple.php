@@ -1,5 +1,5 @@
 <?php
-$firstNames = ["Johnny", "Bobby", "Randy", "Sandy", "Sanders"];
+$firstNames = ['Johnny', 'Bobby', 'Randy', 'Sandy', 'Sanders'];
 $i = 1;
 ?>
 
@@ -15,7 +15,7 @@ $i = 1;
 <body>
     <ul>
         <?php foreach ($firstNames as $firstNames) {
-            echo '<li>' . $i . ' ' . $firstNames . '</li>' . '<br>';
+            echo '<li>'.$i.' '.$firstNames.'</li>'.'<br>';
             $i++;
         } ?>
     </ul>

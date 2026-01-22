@@ -1,15 +1,16 @@
 <?php
-require_once "../jour-09/Product.php";
-require_once "../jour-09/Category.php";
-require_once "../jour-09/Cart-item.php";
-require_once "../jour-09/Cart.php";
-require_once "../jour-09/User.php";
-require_once "../jour-09/Address.php";
-require_once "../jour-09/Order.php";
-require_once "ProductRepository.php";
-require_once "CategoryRepository.php";
-require_once "UserRepository.php";
-require_once "DataBase.php";
+
+require_once '../jour-09/Product.php';
+require_once '../jour-09/Category.php';
+require_once '../jour-09/Cart-item.php';
+require_once '../jour-09/Cart.php';
+require_once '../jour-09/User.php';
+require_once '../jour-09/Address.php';
+require_once '../jour-09/Order.php';
+require_once 'ProductRepository.php';
+require_once 'CategoryRepository.php';
+require_once 'UserRepository.php';
+require_once 'DataBase.php';
 
 $pdo = DataBase::getInstance();
 
@@ -27,9 +28,9 @@ $use = new UserRepository($pdo);
 // $snowboard1 = new Product(4, "Snowboard 1500", "Average snowboard", 249.99, 9, $snowboard);
 // $snowboard2 = new Product(5, "Snowboard 2500", "Good snowboard", 349.99, 11, $snowboard);
 
-//$john = new User("John", "john@gmail.com", "haricotrouge");
+// $john = new User("John", "john@gmail.com", "haricotrouge");
 
 $oneObject = $prod->find(12);
 var_dump($oneObject);
 
-var_dump($use->findByEmail("john@gmail.com"));
+var_dump($use->findByEmail('john@gmail.com'));

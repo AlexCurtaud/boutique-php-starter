@@ -1,9 +1,9 @@
 <?php
-require_once "helpers.php";
-$username = $_POST["user_name"] ?? "";
-$email = $_POST["user_email"] ?? "";
-$password = $_POST["password1"] ?? "";
-$confPassword = $_POST["conf_password1"] ?? "";
+require_once 'helpers.php';
+$username = $_POST['user_name'] ?? '';
+$email = $_POST['user_email'] ?? '';
+$password = $_POST['password1'] ?? '';
+$confPassword = $_POST['conf_password1'] ?? '';
 ?>
 
 <!DOCTYPE html>
@@ -21,19 +21,19 @@ $confPassword = $_POST["conf_password1"] ?? "";
         <ul>
             <li><label for="name">Username</label>
                 <input type="text" id="name" name="user_name" value="<?= $username ?>">
-                <?= isEmpty($username) . rangeChar($username) ?>
+                <?= isEmpty($username).rangeChar($username) ?>
             </li>
             <li><label for="email">Email</label>
                 <input type="text" id="email" name="user_email" value="<?= $email ?>">
-                <?= isEmpty($email) . emailValid($email) ?>
+                <?= isEmpty($email).emailValid($email) ?>
             </li>
             <li><label for="password">Password</label>
                 <input type="password" id="password" name="password1" value="<?= $password ?>">
-                <?= isEmpty($password) . passwordChar($password) ?>
+                <?= isEmpty($password).passwordChar($password) ?>
             </li>
             <li><label for="password">Confirmation</label>
                 <input type="password" id="conf_password" name="conf_password1" value="<?= $confPassword ?>">
-                <?= isEmpty($confPassword) . passwordMatch($password, $confPassword) ?>
+                <?= isEmpty($confPassword).passwordMatch($password, $confPassword) ?>
             </li>
             <div class="button">
                 <button type="submit">Envoyer le message</button>

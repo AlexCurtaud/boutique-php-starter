@@ -1,9 +1,10 @@
 <?php
+
 $a = 0;
-$b = "";
+$b = '';
 $c = null;
 $d = false;
-$e = "0";
+$e = '0';
 
 var_dump($a == $b);
 var_dump($a === $b);

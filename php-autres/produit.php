@@ -1,11 +1,11 @@
 <?php
-$nom = "Transporter T6.1";
+$nom = 'Transporter T6.1';
 $description = "Le tout dernier Transporter est l'utilitaire ultime de la gamme. D'origine il offre 3 places à l'avant du véhicule et propose le plus grand volume de stockage parmis la concurrence. Vous cherchez la fiabilité, l'efficacité ainsi que la sobriété? N'hésitez plus!";
 $prixHT = 38333.325;
 $tauxTVA = 0.2;
 $Stock = 23;
 $prixTTC = $prixHT * (1 + $tauxTVA);
-$format = "à partir de %01.2f €";
+$format = 'à partir de %01.2f €';
 $discount = 0.07;
 $prixDiscount = $prixTTC * (1 - $discount);
 ?>

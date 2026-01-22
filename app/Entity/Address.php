@@ -8,11 +8,12 @@ class Address
         private int $postCode,
         private string $country
     ) {}
+
     public function display()
     {
-        return $this->street . ' <br>' .
-            $this->city . ' <br>' .
-            $this->postCode . ' <br>' .
-            $this->country . ' <br>';
+        return $this->street.' <br>'.
+            $this->city.' <br>'.
+            $this->postCode.' <br>'.
+            $this->country.' <br>';
     }
 }

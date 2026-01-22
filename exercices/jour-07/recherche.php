@@ -1,31 +1,30 @@
 <?php
 
 $pdo = new PDO(
-    "mysql:host=localhost;dbname=boutique;charset=utf8mb4",
-    "dev",
-    "dev",
+    'mysql:host=localhost;dbname=boutique;charset=utf8mb4',
+    'dev',
+    'dev',
     [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]
 );
 // Stock la donnée qui est retourné de la recherche depuis le formulaire
-$search = $_GET["recherche"];
+$search = $_GET['recherche'];
 
 // Paramétrage de la requête SQL
 // Ici là requête recherche les NOM dans le tableau produit qui sont ressemblant :
 // à la variable $search
-$recherche = $pdo->prepare("SELECT name FROM products WHERE name LIKE ?");
-$recherche->execute(['%' . $search . '%']);
+$recherche = $pdo->prepare('SELECT name FROM products WHERE name LIKE ?');
+$recherche->execute(['%'.$search.'%']);
 
 // $product stock le résultat d'un fetchAll dans un tableau associatif
 $product = $recherche->fetchAll(PDO::FETCH_ASSOC);
 
 if (empty($product)) {
-    echo "Aucun produit trouvé";
+    echo 'Aucun produit trouvé';
 } else {
     foreach ($product as $prod) {
-        echo $prod["name"];
+        echo $prod['name'];
     }
 }
-
 
 ?>
 

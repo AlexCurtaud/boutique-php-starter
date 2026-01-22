@@ -1,5 +1,5 @@
 <?php
-require_once "helpers.php";
+require_once 'helpers.php';
 
 ?>
 
@@ -13,7 +13,7 @@ require_once "helpers.php";
 </head>
 
 <body>
-    <?= displayBadge("Boost", "green") ?>
+    <?= displayBadge('Boost', 'green') ?>
     <?= displayPrice(150, $discount = 0.2) ?>
     <?= displayStock(0) ?>
 </body>

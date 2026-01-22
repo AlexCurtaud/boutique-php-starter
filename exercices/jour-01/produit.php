@@ -1,8 +1,8 @@
 <?php
 
-$name = "Raquette";
+$name = 'Raquette';
 $price = 199.99;
-$price2 = "199.99";
+$price2 = '199.99';
 $stock = 7;
 $onSale = false;
 
@@ -12,7 +12,7 @@ var_dump($stock);
 var_dump($onSale);
 var_dump($price2);
 
-$phrase = "Le Produit X coûte Y€";
+$phrase = 'Le Produit X coûte Y€';
 
 echo $phrase;
 

@@ -1,10 +1,10 @@
 <?php
 $discount = 0.2;
 $product = [
-    "name" => "Chaussure",
-    "price" => number_format(99.00, 2),
-    "stock" => 4,
-    "onSale" => true
+    'name' => 'Chaussure',
+    'price' => number_format(99.00, 2),
+    'stock' => 4,
+    'onSale' => true,
 ];
 
 // Ici la méthode if/else
@@ -40,9 +40,9 @@ $product = [
 </head>
 
 <body>
-    <div class="<?= $product["stock"] > 0 ? "inStock" : "outOfStock"; ?>">
-        <h3><?= $product["name"] ?><?= $product["onSale"] ? "  🔥 PROMO" : ""; ?></h3>
-        <p><?= !$product["onSale"] ? $product["price"] . '€' : '<strike>' . $product["price"] . '€</strike>' . ' ' . number_format($product["price"] * (1 - $discount), 2) . '€'; ?></p>
+    <div class="<?= $product['stock'] > 0 ? 'inStock' : 'outOfStock'; ?>">
+        <h3><?= $product['name'] ?><?= $product['onSale'] ? '  🔥 PROMO' : ''; ?></h3>
+        <p><?= ! $product['onSale'] ? $product['price'].'€' : '<strike>'.$product['price'].'€</strike>'.' '.number_format($product['price'] * (1 - $discount), 2).'€'; ?></p>
     </div>
 </body>
 

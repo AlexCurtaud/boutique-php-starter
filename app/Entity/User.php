@@ -9,10 +9,10 @@ class User
         private string $name,
         private string $email,
         private string $password,
-        private DateTime $inscriptionDate = new DateTime("now", new DateTimeZone("Europe/Paris"))
+        private DateTime $inscriptionDate = new DateTime('now', new DateTimeZone('Europe/Paris'))
     ) {}
 
-    ///////////////////// GETTER ////////////////////////////
+    // /////////////////// GETTER ////////////////////////////
 
     public function getAddresses()
     {
@@ -20,6 +20,7 @@ class User
         foreach ($this->addresses as $address) {
             array_push($allAdresses, $address->display());
         }
+
         return $allAdresses;
     }
 
@@ -43,12 +44,12 @@ class User
         return $this->password;
     }
 
-    ///////////////////// SETTER ////////////////////////////
+    // /////////////////// SETTER ////////////////////////////
 
     // Création d'addresses, et insertion de ces adresses dans le tableau d'adresse
     public function addAddress($street, $city, $postCode, $country)
     {
         $this->addresses[] = new Address($street, $city, $postCode, $country);
-        echo "address added <br>";
+        echo 'address added <br>';
     }
 }

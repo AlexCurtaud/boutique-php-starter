@@ -8,8 +8,7 @@ class User
     public function __construct(
         private string $name,
         private string $email,
-        private string $password,
-        private DateTime $inscriptionDate = new DateTime('now', new DateTimeZone('Europe/Paris'))
+        private string $password
     ) {}
 
     // /////////////////// GETTER ////////////////////////////
@@ -18,7 +17,7 @@ class User
     {
         $allAdresses = [];
         foreach ($this->addresses as $address) {
-            array_push($allAdresses, $address->display());
+            $allAdresses[] = $address->display();
         }
 
         return $allAdresses;

@@ -31,7 +31,7 @@ class ProductController
         $product = $this->repository->find($id);
         var_dump($product);
 
-        if (! $product) {
+        if (!$product instanceof \Product) {
             http_response_code(404);
             require __DIR__.'/../views/errors/404.php';
 

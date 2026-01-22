@@ -2,13 +2,8 @@
 
 class Order
 {
-    private string $status;
-
     public function __construct(
-        private int $id,
-        private User $user,
-        private Cart $item,
-        private DateTime $date = new DateTime('now', new DateTimeZone('Europe/Paris'))
+        private Cart $item
     ) {}
 
     // GETTER

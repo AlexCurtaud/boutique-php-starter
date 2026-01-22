@@ -54,9 +54,8 @@ class ProductRepository
     {
         $searching = $this->pdo->prepare('SELECT * FROM products WHERE name LIKE ?');
         $searching->execute(['%'.$search.'%']);
-        $searched = $searching->fetchAll(PDO::FETCH_ASSOC);
 
-        return $searched;
+        return $searching->fetchAll(PDO::FETCH_ASSOC);
     }
 
     // //////////////////// SETTER ///////////////////////////////

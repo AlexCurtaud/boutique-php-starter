@@ -9,27 +9,24 @@ class CategoryRepository
     {
         $finder = $this->pdo->prepare('SELECT * FROM categories');
         $finder->execute();
-        $finderAll = $finder->fetchAll(PDO::FETCH_ASSOC);
 
-        return $finderAll;
+        return $finder->fetchAll(PDO::FETCH_ASSOC);
     }
 
     public function find(int $id)
     {
         $findById = $this->pdo->prepare('SELECT * FROM categories WHERE id=?');
         $findById->execute(["$id"]);
-        $finder = $findById->fetch();
 
-        return $finder;
+        return $findById->fetch();
     }
 
     public function findWithProduct(Category $category)
     {
         $findProdbyCategory = $this->pdo->prepare('SELECT name, category FROM categories WHERE category_id=?');
         $findProdbyCategory->execute([$category->getId()]);
-        $finder = $findProdbyCategory->fetchAll(PDO::FETCH_ASSOC);
 
-        return $finder;
+        return $findProdbyCategory->fetchAll(PDO::FETCH_ASSOC);
     }
 
     // /////////////////// SETTER ////////////////////////////

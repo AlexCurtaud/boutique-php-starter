@@ -9,27 +9,24 @@ class UserRepository
     {
         $finder = $this->pdo->prepare('SELECT * FROM users');
         $finder->execute();
-        $finderAll = $finder->fetchAll(PDO::FETCH_ASSOC);
 
-        return $finderAll;
+        return $finder->fetchAll(PDO::FETCH_ASSOC);
     }
 
     public function find(int $id)
     {
         $findById = $this->pdo->prepare('SELECT * FROM users WHERE id=?');
         $findById->execute([$id]);
-        $finder = $findById->fetch();
 
-        return $finder;
+        return $findById->fetch();
     }
 
     public function findByEmail(string $email)
     {
         $findProdbyUser = $this->pdo->prepare('SELECT nom FROM users WHERE email=?');
         $findProdbyUser->execute([$email]);
-        $finder = $findProdbyUser->fetch();
 
-        return $finder;
+        return $findProdbyUser->fetch();
     }
 
     // /////////////////// SETTER ////////////////////////////

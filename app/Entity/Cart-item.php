@@ -18,6 +18,7 @@ class CartItem
             return $this->quantity += max(1, $units);
         }
         echo 'Not enough quantity in stock';
+
         return null;
     }
 
